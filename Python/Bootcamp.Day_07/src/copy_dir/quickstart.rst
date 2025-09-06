@@ -1,0 +1,55 @@
+Usage
+=====
+
+Run programm
+------------
+
+To run programm, you need next python libs: peewee, pyautogui, sphinx.
+To start the test you only need to run main.py file.
+
+.. code-block:: console
+
+   (.venv) $ python3 main.py
+
+Check programm
+--------------
+
+To check programm with tests, you need next python libs: peewee, pytest, pyautogui, sphinx.
+To check the programm you only need to use pytest on tests.py file.
+
+.. code-block:: console
+
+   (.venv) $ pytest tests.py
+
+Pseudo_manual functions
+-----------------------
+
+Functions used for imitation of user in tests.
+
+.. autofunction:: pseudo_manual.imitate_right
+
+.. autofunction:: pseudo_manual.imitate_wrong
+
+.. autofunction:: pseudo_manual.imitate_insert
+
+Interrogation functions
+-----------------------
+
+Functions used for imitation of user in tests.
+
+.. autofunction:: interrogation.ask_questions
+
+.. autofunction:: interrogation.check_insert
+
+.. autofunction:: interrogation.offset_magnitude
+
+Load_question function and class
+--------------------------------
+
+Class and function to create db with questions for VK test.
+
+.. autofunction:: load_questions.CreateQuestionDB
+
+.. autoclass:: load_questions.VKTest
+
+

@@ -1,0 +1,124 @@
+#include "3D_Viewer_core.h"
+
+#suite LOAD_TESTING
+
+#test load_cube
+  Obj *cube = load_obj_info("./cube.obj");
+  vertex_t vert_arr_check[8];
+  face_t face_arr_check[12];
+
+  vert_arr_check[0].x =2.000000;
+  vert_arr_check[0].y =-2.000000;
+  vert_arr_check[0].z =-2.000000;
+  vert_arr_check[1].x =2.000000;
+  vert_arr_check[1].y =-2.000000;
+  vert_arr_check[1].z =2.000000;
+  vert_arr_check[2].x =-2.000000;
+  vert_arr_check[2].y =-2.000000;
+  vert_arr_check[2].z =2.000000;
+  vert_arr_check[3].x =-2.000000;
+  vert_arr_check[3].y =-2.000000;
+  vert_arr_check[3].z =-2.000000;
+  vert_arr_check[4].x =2.000000;
+  vert_arr_check[4].y =2.000000;
+  vert_arr_check[4].z =-1.999999;
+  vert_arr_check[5].x =1.999999;
+  vert_arr_check[5].y =2.000000;
+  vert_arr_check[5].z =2.000001;
+  vert_arr_check[6].x =-2.000000;
+  vert_arr_check[6].y =2.000000;
+  vert_arr_check[6].z =2.000000;
+  vert_arr_check[7].x =-2.000000;
+  vert_arr_check[7].y =2.000000;
+  vert_arr_check[7].z =-2.000000;
+
+  face_arr_check[0].size = 3;
+  face_arr_check[0].vertices = calloc(3, sizeof(int));
+  face_arr_check[0].vertices[0] = 1;
+  face_arr_check[0].vertices[1] = 2;
+  face_arr_check[0].vertices[2] =  3;
+
+  face_arr_check[1].size = 3;
+  face_arr_check[1].vertices = calloc(3, sizeof(int));
+  face_arr_check[1].vertices[0] = 7;
+  face_arr_check[1].vertices[1] = 6;
+  face_arr_check[1].vertices[2] =  5;
+
+  face_arr_check[2].size = 3;
+  face_arr_check[2].vertices = calloc(3, sizeof(int));
+  face_arr_check[2].vertices[0] = 4;
+  face_arr_check[2].vertices[1] = 5;
+  face_arr_check[2].vertices[2] =  1;
+
+  face_arr_check[3].size = 3;
+  face_arr_check[3].vertices = calloc(3, sizeof(int));
+  face_arr_check[3].vertices[0] = 5;
+  face_arr_check[3].vertices[1] = 6;
+  face_arr_check[3].vertices[2] =  2;
+
+  face_arr_check[4].size = 3;
+  face_arr_check[4].vertices = calloc(3, sizeof(int));
+  face_arr_check[4].vertices[0] = 2;
+  face_arr_check[4].vertices[1] = 6;
+  face_arr_check[4].vertices[2] =  7;
+
+  face_arr_check[5].size = 3;
+  face_arr_check[5].vertices = calloc(3, sizeof(int));
+  face_arr_check[5].vertices[0] = 0;
+  face_arr_check[5].vertices[1] = 3;
+  face_arr_check[5].vertices[2] =  7;
+
+  face_arr_check[6].size = 3;
+  face_arr_check[6].vertices = calloc(3, sizeof(int));
+  face_arr_check[6].vertices[0] = 0;
+  face_arr_check[6].vertices[1] = 1;
+  face_arr_check[6].vertices[2] =  3;
+
+  face_arr_check[7].size = 3;
+  face_arr_check[7].vertices = calloc(3, sizeof(int));
+  face_arr_check[7].vertices[0] = 4;
+  face_arr_check[7].vertices[1] = 7;
+  face_arr_check[7].vertices[2] =  5;
+
+  face_arr_check[8].size = 3;
+  face_arr_check[8].vertices = calloc(3, sizeof(int));
+  face_arr_check[8].vertices[0] = 0;
+  face_arr_check[8].vertices[1] = 4;
+  face_arr_check[8].vertices[2] =  1;
+
+  face_arr_check[9].size = 3;
+  face_arr_check[9].vertices = calloc(3, sizeof(int));
+  face_arr_check[9].vertices[0] = 1;
+  face_arr_check[9].vertices[1] = 5;
+  face_arr_check[9].vertices[2] =  2;
+
+  face_arr_check[10].size = 3;
+  face_arr_check[10].vertices = calloc(3, sizeof(int));
+  face_arr_check[10].vertices[0] = 3;
+  face_arr_check[10].vertices[1] = 2;
+  face_arr_check[10].vertices[2] =  7;
+
+  face_arr_check[11].size = 3;
+  face_arr_check[11].vertices = calloc(3, sizeof(int));
+  face_arr_check[11].vertices[0] = 4;
+  face_arr_check[11].vertices[1] = 0;
+  face_arr_check[11].vertices[2] =  7;
+
+for(int i = 0; i < 8; i++)
+  ck_assert_mem_eq(&(cube->vert_arr[i]), &(vert_arr_check[i]), sizeof(vertex_t));
+
+printf("%d\n", cube->face_arr[0].size);
+printf("%d\n", face_arr_check[0].size);
+printf("%d\n", cube->face_arr[0].vertices[0]);
+printf("%d\n", face_arr_check[0].vertices[0]);
+printf("%d\n", cube->face_arr[0].vertices[1]);
+printf("%d\n", face_arr_check[0].vertices[1]);
+printf("%d\n", cube->face_arr[0].vertices[2]);
+printf("%d\n", face_arr_check[0].vertices[2]);
+printf("%ld\n", sizeof(cube->face_arr[0].vertices));
+printf("%ld\n", sizeof(face_arr_check[0].vertices));
+//for(int i = 0; i < 12; i++)
+ //ck_assert_mem_eq(&(cube->face_arr[0]), &(face_arr_check[0]), sizeof(face_t));
+
+for(int i = 0; i < 12; i++)
+  free(face_arr_check[i].vertices);

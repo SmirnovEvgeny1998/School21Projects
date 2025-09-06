@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usage &#8212; Voight-Kampff test 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Welcome to Voight-Kampff test documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<section id="run-programm">
+<h2>Run programm<a class="headerlink" href="#run-programm" title="Link to this heading">¶</a></h2>
+<p>To run programm, you need next python libs: peewee, pyautogui, sphinx.
+To start the test you only need to run main.py file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>python3<span class="w"> </span>main.py
+</pre></div>
+</div>
+</section>
+<section id="check-programm">
+<h2>Check programm<a class="headerlink" href="#check-programm" title="Link to this heading">¶</a></h2>
+<p>To check programm with tests, you need next python libs: peewee, pytest, pyautogui, sphinx.
+To check the programm you only need to use pytest on tests.py file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>pytest<span class="w"> </span>tests.py
+</pre></div>
+</div>
+</section>
+<section id="pseudo-manual-functions">
+<h2>Pseudo_manual functions<a class="headerlink" href="#pseudo-manual-functions" title="Link to this heading">¶</a></h2>
+<p>Functions used for imitation of user in tests.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pseudo_manual.imitate_right">
+<span class="sig-prename descclassname"><span class="pre">pseudo_manual.</span></span><span class="sig-name descname"><span class="pre">imitate_right</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pseudo_manual.imitate_right" title="Link to this definition">¶</a></dt>
+<dd><p>Imitates person who using keyboard and writes right parametrs(those, who dont create exeptions or loops in input). Used for test_ask_questions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nothing, just imitates keyboard user.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pseudo_manual.imitate_wrong">
+<span class="sig-prename descclassname"><span class="pre">pseudo_manual.</span></span><span class="sig-name descname"><span class="pre">imitate_wrong</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pseudo_manual.imitate_wrong" title="Link to this definition">¶</a></dt>
+<dd><p>Imitates person who using keyboard and writes different wrong parametrs(those, who create exeptions or loops in input) and then the right one. Used for test_ask_questions_2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nothing, just imitates keyboard user.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pseudo_manual.imitate_insert">
+<span class="sig-prename descclassname"><span class="pre">pseudo_manual.</span></span><span class="sig-name descname"><span class="pre">imitate_insert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pseudo_manual.imitate_insert" title="Link to this definition">¶</a></dt>
+<dd><p>Imitates person who using keyboard and writes different wrong parametrs(those, who create exeptions or loops in input) and then the right one. Used for test_insert.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nothing, just imitates keyboard user.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="interrogation-functions">
+<h2>Interrogation functions<a class="headerlink" href="#interrogation-functions" title="Link to this heading">¶</a></h2>
+<p>Functions used for imitation of user in tests.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="interrogation.ask_questions">
+<span class="sig-prename descclassname"><span class="pre">interrogation.</span></span><span class="sig-name descname"><span class="pre">ask_questions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#interrogation.ask_questions" title="Link to this definition">¶</a></dt>
+<dd><p>Starts the questioning. Takes list of questions and answers from pre-formed db and puts them into terminal in human-readable form. Takes answers and parametrs from input() and on their basis gives a decision about user: is he replicant or not. Also creates global replicancy for taking answers from threads in tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nothing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="interrogation.check_insert">
+<span class="sig-prename descclassname"><span class="pre">interrogation.</span></span><span class="sig-name descname"><span class="pre">check_insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interrogation.check_insert" title="Link to this definition">¶</a></dt>
+<dd><p>Checks user input with given parametrs. Input always must be int, min and max is a range for qualified answers. Also creates global result for taking answers from threads in tests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> (<em>int</em>) – Creates a lower boundary for numbers, after any input less than min function will ask for input again.</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – Creates a high boundary for numbers, after any input more than max function will ask for input again.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Result of correct input.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="interrogation.offset_magnitude">
+<span class="sig-prename descclassname"><span class="pre">interrogation.</span></span><span class="sig-name descname"><span class="pre">offset_magnitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bpm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interrogation.offset_magnitude" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if given parametrs are out of normal bounds. Parametrs represent different kinds of human subconsious behavior, every time parameter goes out of normal bounds, function register that and correct the offset of mood by some margin and returns magnitude of emotions after answer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bpm</strong> (<em>int</em>) – Breaths per minute that interviewee done.</p></li>
+<li><p><strong>hr</strong> (<em>int</em>) – Number of interviewee’s beats of heart.</p></li>
+<li><p><strong>bl</strong> (<em>int</em>) – Blush level of interviewee.</p></li>
+<li><p><strong>pd</strong> (<em>int</em>) – Size of interviewee’s pupils in mm.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Magnitude of emotions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="load-question-function-and-classes">
+<h2>Load_question function and classes<a class="headerlink" href="#load-question-function-and-classes" title="Link to this heading">¶</a></h2>
+<p>Classes and function to create db with questions for VK test.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="load_questions.CreateQuestionDB">
+<span class="sig-prename descclassname"><span class="pre">load_questions.</span></span><span class="sig-name descname"><span class="pre">CreateQuestionDB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_questions.CreateQuestionDB" title="Link to this definition">¶</a></dt>
+<dd><p>Creates set of predefined questions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nothing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_questions.VKTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_questions.</span></span><span class="sig-name descname"><span class="pre">VKTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_questions.VKTest" title="Link to this definition">¶</a></dt>
+<dd><p>Class to repsesent the question, answers and their weight. Inherited from peewee.Model for db creation.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Voight-Kampff test</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-programm">Run programm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-programm">Check programm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pseudo-manual-functions">Pseudo_manual functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pseudo_manual.imitate_right"><code class="docutils literal notranslate"><span class="pre">imitate_right()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pseudo_manual.imitate_wrong"><code class="docutils literal notranslate"><span class="pre">imitate_wrong()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pseudo_manual.imitate_insert"><code class="docutils literal notranslate"><span class="pre">imitate_insert()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interrogation-functions">Interrogation functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interrogation.ask_questions"><code class="docutils literal notranslate"><span class="pre">ask_questions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interrogation.check_insert"><code class="docutils literal notranslate"><span class="pre">check_insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interrogation.offset_magnitude"><code class="docutils literal notranslate"><span class="pre">offset_magnitude()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#load-question-function-and-classes">Load_question function and classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load_questions.CreateQuestionDB"><code class="docutils literal notranslate"><span class="pre">CreateQuestionDB()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load_questions.VKTest"><code class="docutils literal notranslate"><span class="pre">VKTest</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Voight-Kampff test documentation!</a></li>
+      <li>Next: <a href="api.html" title="next chapter">API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, burnerwa.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/quickstart.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

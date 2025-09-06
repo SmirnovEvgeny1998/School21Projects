@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package protoblog;
+
+enum AlignmentState {
+    Problem = 0;
+	Ally = 1;
+	Enemy = 2;
+}
+
+enum ClassName {
+    Problem_2 = 0;
+	Corvette = 1;
+	Frigate = 2;
+	Cruiser = 3;
+	Destroyer = 4;
+	Carrier = 5;
+	Dreadnought = 6;
+}
+
+enum DumbProtoBool {
+    Problem3 = 0;
+    True = 1;
+    False = 2;
+}
+
+message Officers {
+	string firstName = 1;
+	string lastName = 2;
+	string rank = 3;
+}
+
+message Ships {
+	AlignmentState alignment = 1;
+	string name = 2;
+	ClassName classs = 3;
+	float length = 4;
+	int32 crew_size = 5;
+	DumbProtoBool armed = 6;
+	repeated Officers oficer_crew = 7;
+}
+
+message CoordinatesRequest {
+    float asc_hour = 1;
+    float asc_min = 2;
+    float asc_sec = 3;
+    float dec_fir = 4;
+    float dec_sec = 5;
+    float dec_thi = 6;
+}
+
+message ShipsResponse {
+    repeated Ships ship = 1;
+}
+
+service ShipsList {
+    rpc ReturnShips (CoordinatesRequest) returns (ShipsResponse);
+}

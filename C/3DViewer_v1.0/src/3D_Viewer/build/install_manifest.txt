@@ -1,0 +1,1 @@
+/home/evgeny/Programming/Школа 21 учебные проекты/C/3DViewer_v1.0/src/3D_Viewer/build/./bin/3D_Viewer

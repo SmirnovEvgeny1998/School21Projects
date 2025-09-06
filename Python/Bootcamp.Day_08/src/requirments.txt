@@ -1,0 +1,8 @@
+import fastapi, 'uvicorn[standard]', httpx, uuid, requests, asyncio, aiohttp, redis
+
+запуск сервера
+uvicorn try(фаил с сервером):app(переменная фастапи) --reload --port 8888
+
+Записать новые сайты можно в Фаил result/examples с командой cat results/example.txt | xargs python3 newest_crawler.py --sites
+
+Последнее задание требует запуска редис сервера(лучше напрямую через исполняемый Фаил тк брю лагает). Результаты получает catcher.py который должен быть запущен на момент отправки сообщения.

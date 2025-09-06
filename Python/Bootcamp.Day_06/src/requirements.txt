@@ -1,0 +1,7 @@
+install google pydantic peewee concurrent random grpc grpc-tools argparse python_ver_3_12
+pip3 install --upgrade google-api-python-client
+
+proto files creation
+python(3?) -m grpc_tools.protoc -I . --python_out=. --pyi_out=. --grpc_python_out=. recommendations.proto
+
+postgresql with parametrs name='my_app', user='postgres', password='secret', host='127.0.0.1', port=5432

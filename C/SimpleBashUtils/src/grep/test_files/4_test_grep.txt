@@ -1,0 +1,14 @@
+Asdf
+Sd f
+As
+Df 
+Asd
+Fa
+Pdf
+^([a-zA-Z0-9_\-\.\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
+$ ecHo "This is a test" | sed -n '/test/p'
+$ eCho "This is a test" | awk '/test/{print $0}'
+
+o «талия»	腰
+少	shǎo «немного»	shā «песок»	沙 и 砂
+永	yǒng «навсегда»	yǒng «плавать»	泳

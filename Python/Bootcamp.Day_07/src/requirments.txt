@@ -1,0 +1,10 @@
+install python3.12, peewee, pytest, pyautogui, sphinx
+
+Docs
+sphinx-quickstart docs
+Voight-Kampff test
+burnerwa
+1.0
+<none>
+copy all files from copy_dir into docs/source
+cd docs && make html(few times because files will ve created one by one)
