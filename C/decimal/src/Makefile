@@ -1,5 +1,10 @@
 CFLAGS = -std=c11 -Wall -Werror -Wextra
-TFLAGS = -lcheck -lm -lpthread
+TFLAGS = -lcheck -lm -lpthread 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+	TFLAGS +=  -lsubunit
+endif
 
 all : style gcov_report
 
