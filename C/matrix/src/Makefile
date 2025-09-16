@@ -1,11 +1,17 @@
 CFLAGS = -std=c11 -Wall -Werror -Wextra -g
+TFLAGS = -lcheck -lm -lpthread 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+	TFLAGS +=  -lsubunit
+endif
 
 all : test
 
-gcov_report :
+gcov_report : clean
 	gcc --coverage $(CFLAGS) -c tests.c -o tests.o
 	gcc --coverage $(CFLAGS) -c s21_matrix.c -o s21_matrix.o
-	gcc --coverage $(CFLAGS) tests.o s21_matrix.o -lcheck -lm -lpthread  -o test
+	gcc --coverage $(CFLAGS) tests.o s21_matrix.o $(TFLAGS) -o test
 	./test
 	mkdir -p gcov
 	lcov --capture --directory . --output-file coverage.info
@@ -13,8 +19,8 @@ gcov_report :
 	open gcov/index.html
 	rm -rf *.gcno *.gcda *.gcov
 
-test : tests.o s21_matrix.a
-	gcc $(CFLAGS) tests.o s21_matrix.a -lcheck -lm -lpthread -o test
+test : clean tests.o s21_matrix.a
+	gcc $(CFLAGS) tests.o s21_matrix.a $(TFLAGS) -o test
 	./test
 
 tests.o : tests.c

@@ -8,7 +8,7 @@ endif
 
 all : style gcov_report
 
-test : tests.o s21_decimal.a
+test : clean tests.o s21_decimal.a
 	gcc $(CFLAGS) tests.o s21_decimal.a $(TFLAGS)  -o test
 	./test
 	rm -rf *.o
@@ -37,6 +37,6 @@ style:
 	clang-format -i -style=Google *.c *.h
 
 clean :
-	rm -rf *.o test *.gc* *.a *.info
+	rm -rf *.o test *.gc* *.a *.info gcov
 
 rebuild: clean all

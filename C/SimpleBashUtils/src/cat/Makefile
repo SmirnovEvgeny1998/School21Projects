@@ -16,4 +16,4 @@ cat_other_functions.o : cat_other_functions.c
 	gcc -Wall -Werror -Wextra -c cat_other_functions.c -o cat_other_functions.o
 
 clean :
-	rm *.o s21_cat ../grep/*.o ../grep/s21_grep
+	rm -rf *.o s21_cat ../grep/*.o ../grep/s21_grep

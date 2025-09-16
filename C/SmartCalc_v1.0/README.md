@@ -71,4 +71,8 @@
 ## Тип проекта
 Индивидуальный. Весь проект написан мной.
 ## Используемые языки/технологии/библиотеки.
-С, make, <check.h>(юнит-тесты), Qt.
+С, make, <check.h>(юнит-тесты), Qt, doxygen, lcov.
+## Зависимости
+Qt(developer kit), doxygen, check.h, lcov, QtCharts(Linux).
+## Платформы
+Mac, Linux(тесты проводились на Ubuntu).

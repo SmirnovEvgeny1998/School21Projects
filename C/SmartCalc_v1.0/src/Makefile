@@ -1,9 +1,15 @@
 CFLAGS = -std=c11 -Wall -Werror -Wextra
+TFLAGS = -lcheck -lm -lpthread 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+	TFLAGS +=  -lsubunit
+endif
 
 all : style gcov_report test
 
 test : tests.o s21_smart_calc.a
-	gcc $(CFLAGS) tests.o s21_smart_calc.a -lcheck -lm -lpthread  -o test
+	gcc $(CFLAGS) tests.o s21_smart_calc.a $(TFLAGS) -o test
 	./test
 
 tests.o : tests.c
@@ -19,7 +25,7 @@ s21_smart_calc.a: s21_smart_calc.o
 gcov_report:
 	gcc --coverage $(CFLAGS) -c tests.c -o tests.o
 	gcc --coverage $(CFLAGS) -c s21_smart_calc.c -o s21_smart_calc.o
-	gcc --coverage $(CFLAGS) tests.o s21_smart_calc.o -lcheck -lm -lpthread  -o test
+	gcc --coverage $(CFLAGS) tests.o s21_smart_calc.o $(TFLAGS) -o test
 	./test
 	mkdir -p gcov
 	lcov --capture --directory . --output-file coverage.info
@@ -28,7 +34,6 @@ gcov_report:
 	rm -rf *.gcno *.gcda *.gcov
 
 style:
-	cp ../materials/linters/.clang-format .
 	clang-format -i *.c *.h
 	clang-format -i SmartCalc/s21_smart_calc.c SmartCalc/s21_smart_calc.h
 

@@ -208,4 +208,8 @@ int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 ## Тип проекта
 Индивидуальный. Весь проект написан мной.
 ## Используемые языки/технологии/библиотеки.
-С, make, <check.h>(юнит-тесты).
+С, make, <check.h>(юнит-тесты), lcov, clang-format.
+## Зависимости
+check.h, lcov, clang-format.
+## Платформы
+Mac, Linux(тесты проводились на Ubuntu).
