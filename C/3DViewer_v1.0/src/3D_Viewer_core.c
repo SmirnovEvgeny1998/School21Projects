@@ -111,6 +111,13 @@ vertex_t *get_arr_of_vertices(FILE *obj_file, int v_count) {
   while (getline(&line, &n, obj_file) != -1) {
     int r = sscanf(line, "%3s", str);
     if (r == 1 && !strcmp(str, "v")) {
+      #ifdef linux
+      for (int i = 0; i < strlen(line); i++) {
+        if (line[i] == '.') {
+          line[i] = ',';
+        }
+      }
+      #endif
       double x, y, z;
       if (sscanf(line, "%*s %lf %lf %lf", &x, &y, &z) == 3) {
         vert_arr[counter].x = x;

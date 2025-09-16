@@ -1,5 +1,5 @@
 PROJECT_NAME	= 3D_Viewer
-FULL_PROJECT_NAME = C8_3DViewer_v1.0-1
+FULL_PROJECT_NAME = 3DViewer_v1.0
 ODIR 			= ./obj
 INC_PATH		= ./
 LIB_SRC_DIR		= ./
