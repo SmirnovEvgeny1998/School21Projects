@@ -17,13 +17,13 @@ parser.add_argument("-p", "--page", type=str, default="Erdős number")
 parser.add_argument("-d", "--depth", type=int, default=3)
 args = parser.parse_args()
 
-
 def recursive_scrapper(wikilink, links_counter, depth, parse_links=False):
     if depth >= 0:
+        headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         wikilink = "https://en.wikipedia.org/wiki/" + wikilink.replace(" ", "_")
         logging.info(wikilink)
         pairs_list = []
-        r = requests.get(wikilink)
+        r = requests.get(wikilink, headers=headers)
         if r.status_code == 200:
             soup = BeautifulSoup(r.content, "html.parser")
             head = soup.find("h1", class_="firstHeading mw-first-heading")
@@ -75,3 +75,5 @@ def recursive_scrapper(wikilink, links_counter, depth, parse_links=False):
         else:
             print("Страница не вернула данных")
     return links_counter
+    
+#recursive_scrapper(args.page, 0, args.depth, False)

@@ -5,7 +5,7 @@ import time
 import os
 import sys
 
-sys.path.insert(1, '/Users/burnerwa/Library/Python/3.9/lib/python/site-packages')
+#sys.path.insert(1, '/Users/burnerwa/Library/Python/3.9/lib/python/site-packages')
 
 import redis
 

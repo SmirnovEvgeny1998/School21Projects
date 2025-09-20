@@ -43,10 +43,10 @@ Functions used for imitation of user in tests.
 
 .. autofunction:: interrogation.offset_magnitude
 
-Load_question function and classes
-----------------------------------
+Load_question function and class
+--------------------------------
 
-Classes and function to create db with questions for VK test.
+Class and function to create db with questions for VK test.
 
 .. autofunction:: load_questions.CreateQuestionDB
 

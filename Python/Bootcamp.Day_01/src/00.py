@@ -35,3 +35,19 @@ def get_ingot(purse):
 def empty(purse):
     emptyDict = dict()
     return emptyDict
+    
+'''purse = {}
+print(purse)
+purse = add_ingot(purse)
+print(purse)
+purse = get_ingot(purse)
+print(purse)
+purse = get_ingot(purse)
+print(purse)
+purse = empty(purse)
+print(purse)
+purse = add_ingot(purse)
+print(purse)
+purse = add_ingot(purse)
+print(purse)'''
+

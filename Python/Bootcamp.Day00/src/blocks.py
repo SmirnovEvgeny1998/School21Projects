@@ -5,11 +5,11 @@ for line in sys.stdin:
     if 'Exit' == line.rstrip():
         break
     string += line
-length = sys.argv[1]
+length = int(sys.argv[1])
 splitted = string.split()
 i = 0
 
-while i < length and i < len(splitted):
+while i < len(splitted):
     if not splitted[i].startswith("00000"):
         splitted.pop(i)
     elif splitted[i].startswith("000000"):
@@ -20,6 +20,6 @@ while i < length and i < len(splitted):
         i += 1
         
 i = 0
-while i < len(splitted):
+while i < length and i < len(splitted):
     print(splitted[i])
     i += 1

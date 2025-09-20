@@ -1,6 +1,6 @@
 import sys
 
-sys.path.insert(1, '/Users/burnerwa/Library/Python/3.11/lib/python/site-packages')
+#sys.path.insert(1, '/Users/burnerwa/Library/Python/3.11/lib/python/site-packages')
 
 import asyncio
 import time

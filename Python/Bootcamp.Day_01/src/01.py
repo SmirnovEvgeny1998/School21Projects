@@ -11,3 +11,5 @@ def split_booty(*args):
     purse_3 = {"gold_ingots" : ingots}
     booty = [purse_3, purse_2, purse_1]
     return booty
+    
+print(split_booty({"gold_ingots":3}, {"gold_ingots":2}, {"apples":10}))
